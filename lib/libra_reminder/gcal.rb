@@ -46,7 +46,10 @@ module LibraReminder
       # findして返却日が合致していなければカレンダーの日付を更新
     end
 
-    def delete_event(book)
+    def delete_event(event_id)
+      result = @client.execute(:api_method => @cal.events.delete,
+                               :parameters => {'calendarId' => @config['calendar_id'], 'eventId' => event_id})
+      result.status == 204
     end
     
   end
