@@ -19,6 +19,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_dependency             "logger", "~> 1.2.8"
+  spec.add_dependency             "jwt", "~> 0.1.4"
   spec.add_dependency             "google-api-client", "~> 0.6.4"
   spec.add_dependency             "mechanize", "~> 2.7.3"
   spec.add_dependency             "activerecord", "~> 3.2.0"
