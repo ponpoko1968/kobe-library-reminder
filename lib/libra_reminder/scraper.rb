@@ -46,7 +46,7 @@ module LibraReminder
             deadline = Date.parse(cols[3].text)
             bookId = cols[7].text.split('/')[1].strip.chomp
             print "#{name}|#{deadline}|#{bookId}\n"
-            records << {name: name, deadline: deadline, bookId: bookId }
+            records << {book_name: name, deadline: deadline, book_id: bookId }
           end
         end
         

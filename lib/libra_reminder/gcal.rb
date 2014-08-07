@@ -20,17 +20,17 @@ module LibraReminder
 
     def create_event(book)
       # 返値はカレンダーID
-      d = book['deadline'].to_datetime
+      d = book[:deadline].to_datetime
       ds = sprintf( "%04d-%02d-%02d",d.year,d.month,d.day)
       event = {'calendarId' => @config['calendar_id'],
-                'summary' => book['book_name'],
-                'start' => {
-                            'date' => ds
-                           },
-                'end' => {
-                            'date' => ds
-                           }
-               }
+               'summary' => book[:book_name],
+               'start' => {
+                           'date' => ds
+                          },
+               'end' => {
+                         'date' => ds
+                        }
+              }
 
       result = @client.execute(:api_method => @cal.events.insert,
                         :parameters => {'calendarId' => @config['calendar_id']},
@@ -40,10 +40,33 @@ module LibraReminder
     end
 
     def find_event(book)
+      result = @client.execute(:api_method => @cal.events.get,
+                               :parameters => {'calendarId' => @config['calendar_id'], 'eventId' => book['event_id']})
     end
 
     def update_event(book)
-      # findして返却日が合致していなければカレンダーの日付を更新
+      d = book[:deadline].to_datetime
+      ds = sprintf( "%04d-%02d-%02d",d.year,d.month,d.day)
+      event = {'calendarId' => @config['calendar_id'],
+               'summary' => book[:book_name],
+               'start' => {
+                           'date' => ds
+                          },
+               'end' => {
+                         'date' => ds
+                        }
+              }
+      print JSON.dump(event)
+      result = @client.execute(:api_method => @cal.events.update,
+                               :parameters => {'calendarId' => @config['calendar_id'],
+                                               'eventId' => book['event_id'],
+                                              },
+                        :body => JSON.dump(event),
+                        :headers => {'Content-Type' => 'application/json'})
+      result.data.id
+
+
+
     end
 
     def delete_event(event_id)
