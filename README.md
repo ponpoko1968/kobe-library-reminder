@@ -2,9 +2,8 @@
 
 このアプリは、神戸市立図書館で借りた本の貸出期限を、googleカレンダーへ転送・更新するコマンドラインプログラムです。
 
-## Installation
+## インストール委
 
-Add this line to your application's Gemfile:
 
 ```ruby
 gem 'libra_reminder'
@@ -18,6 +17,7 @@ Or install it yourself as:
 
     $ gem install libra_reminder
 
+API登録のため、下記のgemを別途インストールしてください
 
     $ sudo gem install google-api-client -v 0.6.4
 
@@ -48,8 +48,6 @@ Or install it yourself as:
 
 クライアントID、シークレットをメモっておく
 
-![認証画面の設定](docs/images/Google_Developers_Console_8.png)
-
 ### アクセストークンの取得
 
 ```bash
@@ -72,10 +70,11 @@ config.yamlを編集する。
 
 なお、`calendar_id`項目は、googleカレンダーのカレンダー設定画面から取得する。
 
-![カレンダー設定画面](Google_calendar2.png)
-![カレンダー設定画面](Google_calendar.png)
+![カレンダー設定画面](docs/images/Google_calendar2.png)
 
-## Usage
+![カレンダー設定画面](docs/images/Google_calendar.png)
+
+## 使い方
 
 ```bash
 		$ libra_reminder
@@ -85,7 +84,6 @@ config.yamlを編集する。
 本を返却したり、貸出期限を延長した場合は、このコマンドを再度実行することで、イベントを更新または削除します。
 
 
-TODO: Write usage instructions here
 
 ## Contributing
 
