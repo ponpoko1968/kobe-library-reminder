@@ -1,0 +1,6 @@
+username: <your-ID>
+password: <your-passwd>
+uri: https://www.lib.city.kobe.jp/opac/opacs/lending_display
+cookie_file_path: /tmp/libra_reminder.cookie.yaml
+calendar_id: <your-calendar-ID>
+oauth_yaml: <$YOUR_HOME/.google-api.yaml>
