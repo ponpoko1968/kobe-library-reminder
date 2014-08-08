@@ -1,6 +1,6 @@
 # LibraReminder
 
-TODO: Write a gem description
+このアプリは、神戸市立図書館で借りた本の貸出期限を、googleカレンダーへ転送・更新するコマンドラインプログラムです。
 
 ## Installation
 
