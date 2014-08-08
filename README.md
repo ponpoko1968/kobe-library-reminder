@@ -27,9 +27,9 @@ Or install it yourself as:
 
 - [プロジェクトを作成]を押下
 
-! [プロジェクトを作成 - 1](docs/images/Google_Developers_Console_1.png)
+![プロジェクトを作成 - 1](docs/images/Google_Developers_Console_1.png)
 
-! [プロジェクトを作成 - 2](docs/images/Google_Developers_Console.png)
+![プロジェクトを作成 - 2](docs/images/Google_Developers_Console.png)
 
 
 ## Usage
