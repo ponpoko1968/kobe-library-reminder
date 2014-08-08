@@ -18,7 +18,22 @@ Or install it yourself as:
 
     $ gem install libra_reminder
 
+
+    $ sudo gem install google-api-client -v 0.6.4
+
+- ブラウザを起動してAPIを登録
+
+[https://cloud.google.com/console](https://cloud.google.com/console)
+
+- [プロジェクトを作成]を押下
+
+! [プロジェクトを作成 - 1](docs/images/Google_Developers_Console_1.png)
+
+! [プロジェクトを作成 - 2](docs/images/Google_Developers_Console.png)
+
+
 ## Usage
+
 
 TODO: Write usage instructions here
 
