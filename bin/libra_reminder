@@ -1,3 +1,6 @@
 #!/usr/bin/env ruby
 
 require 'libra_reminder'
+
+
+LibraReminder::Controller.run(ARGV)
