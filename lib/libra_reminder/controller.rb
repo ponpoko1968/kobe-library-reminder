@@ -95,9 +95,13 @@ module LibraReminder
               end
             end
             # 日付が不一致(図書館側で延長手続きされた)
-            if dbbook.deadline.to_date != Date.parse(event.data.start.date)
-              gcal.update_event(dbbook)
-              logger.info("'#{dbbook.book_name}'is updated #{Date.parse(event.data.start.date)} => #{dbbook.deadline}")
+            begin 
+              if dbbook.deadline.to_date != Date.parse(event.data.start.date)
+                gcal.update_event(dbbook)
+                logger.info("'#{dbbook.book_name}'is updated #{Date.parse(event.data.start.date)} => #{dbbook.deadline}")
+              end
+              rescue => e
+                logger.info("#{e}")
             end
           end
         else                    #一度も登録されていない
