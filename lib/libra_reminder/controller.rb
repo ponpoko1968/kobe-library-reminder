@@ -86,7 +86,7 @@ module LibraReminder
           event =  gcal.find_event(book)
           if event
             dbbook = Book.where(event_id: event.data.id)[0]
-            if dbbook.to_be_deleted == "t" #図書館側で削除されている
+            if dbbook != nil && dbbook.to_be_deleted == "t" #図書館側で削除されている
               if gcal.delete_event(dbbook.event_id) #カレンダーを消して
                 logger.info("'#{dbbook.book_name}' is deleted from google calendar")
                 book.destroy    #DBからも消す
